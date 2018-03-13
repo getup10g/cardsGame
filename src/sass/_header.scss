@@ -1,0 +1,11 @@
+.grid-container .header {
+  height: 10vh;
+  background: #f9eff9;
+  border: greenyellow solid 2px;}
+
+@media  (min-width: 800px) {
+
+  .grid-container .header {
+    height: 10vh;
+  }
+}
