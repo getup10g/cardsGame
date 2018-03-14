@@ -1,92 +1,142 @@
-.grid-container .centerDiv {
+.grid-container .game-area {
   background: #f9eff9;
   background-image: url("../images/board.jpg");
   display:block;
-  width: 100%;
-  height: 75vh;
-  float:none;
+  height: 78vh;
   border: greenyellow solid 2px;}
 
-.grid-container .user-cards {
-  width: 100%;
-  height: 200px;
-  text-align: center;
-}
-.grid-container .user-cards img {
-  height: 100px;
-  float: none;
-
-}
-
-.pc-cards {
-  height: 100px;
-  display:block;
+.grid-container .footer {
+  height: 10vh;
   display:none;
 }
-.pc-cards img {
-  float:right;
+.grid-container .user-cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container .user-cards .user {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container .user-cards img {
+  float: left;
   width: 50px;
-  height: 50px;
 }
-
-.grid-container .game-area {
-  float:left;
-  height: 50vh;
-  width: 100%;
-  display:inline-block;
+.pc-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.pc-cards img {
+  display: inline-block;
+  width: 50px;
+}
+.pc-cards .pc1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pc-cards .pc2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+.pc-cards .pc3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container .center-area {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container .center-area .button-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media  (min-width: 500px) {
-  .grid-container .game-area {
-    height: 30vh;
-
+  .grid-container .button-area {
+    height: 50px;
+  }
+  .pc-cards{
+    display: none;
   }
 }
-
 @media  (min-width: 800px) {
-
-  .grid-container .centerDiv {
+  .grid-container .game-area {
     width: 100%;
     height: 75vh;
     float: left;
   }
-
   .grid-container .footer {
     height: 10vh;
   }
-  .grid-container .user-cards {
+  .grid-container .user-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-container .user-cards .user {
     width: 600px;
     height: 200px;
-    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .grid-container .user-cards img {
-    float: right;
+    float: left;
     width: 100px;
   }
   .pc-cards {
-    vertical-align: center;
-    display:block;
-    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .pc-cards img {
-    float:right;
-    width: 100%;
+    display: inline-block;
+    float:left;
+    height: 85px;
+    width: 85px;
+  }
+  .pc-cards .pc1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pc-cards .pc2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .pc-cards.pc3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   .pc-cards .pc3 {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  }
+  .grid-container .center-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-container .center-area .button-area {
+    width: 300px;
     height: 100px;
-  }
-  .pc-cards.pc1 {
-    display: block;
-    margin: 0 auto;
-  }
-  .pc-cards.pc2{
-    float:right;
-    height: 100px;
-  }
-  .grid-container .pc-cards .pc3 {
-    width:100%;
-    height: 100px;
-  }
-  .grid-container .game-area {
-    width: 500px;
-    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

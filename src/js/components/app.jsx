@@ -3,18 +3,23 @@ import {Header} from './header.jsx';
 import {CenterDiv} from './CenterDiv.jsx';
 
 class App extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-            score:0,
-            }
-        }
-
+    constructor(props) {
+        super(props);
+        this.state = {
+           scores:[]
+        };
+    }
+    setScores=(array)=>{
+        this.setState({
+            scores:array
+        })
+    };
 
     render() {
-        return <div>
-            <Header score={this.state.score}/>
-            <CenterDiv />
+
+        return <div className={"grid-container"}>
+            <Header scores={this.state.scores}/>
+            <CenterDiv scores={this.setScores}/>
         </div>
     }
 }
