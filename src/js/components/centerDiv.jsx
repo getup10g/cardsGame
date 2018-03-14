@@ -85,7 +85,7 @@ class CenterDiv extends React.Component {
                 buttonWait: false,
             }, () => {
                 this.calculateScoreForAll();
-                this.sendScores();
+                //this.sendScores();
                 this.oponentsTurn();
             })
         });
@@ -100,7 +100,7 @@ class CenterDiv extends React.Component {
     };
 
     wait = () => {
-        this.sendScores();
+        //this.sendScores();
         this.oponentsTurn();
         this.setState({
             UserDecideFinished: true,

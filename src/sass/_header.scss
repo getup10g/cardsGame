@@ -1,5 +1,5 @@
 .grid-container .header {
-  height: 25vh;
+  height: 22vh;
 }
 .header-logo{
   display: none;
@@ -82,7 +82,7 @@ nav ul li a {
   color: #757575; text-decoration: none;
 }
 @media  (min-width: 360px) {
-  .header{
+ .grid-container .header{
     height: 15vh;
   }
   .header-logo{

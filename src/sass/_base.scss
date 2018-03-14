@@ -86,8 +86,6 @@ textarea {
 body{
   background-color: #222222;
 }
-* {
-  box-sizing: border-box; }
 
 .grid-container {
   height: 100vh;
@@ -108,7 +106,6 @@ body{
   flex-wrap: wrap;
   justify-content: center;
 }
-
 
 
 @media  (min-width: 800px) {
