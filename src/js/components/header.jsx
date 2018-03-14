@@ -26,10 +26,14 @@ class Header extends React.Component{
                 <div className="header">
                         <div className="header-logo">Black-Jack</div>
                         <div className="header-score">
-                            <span>PC1 score:{this.state.pc1Score}</span>
-                            <span>PC2 score:{this.state.pc2Score}</span>
-                            <span>PC3 score:{this.state.pc3Score}</span>
-                            <span>User score:{this.state.userScore}</span>
+                            <nav>
+                                <ul>
+                                    <li><a href="#">PC1 score:{this.state.pc1Score}</a></li>
+                                    <li><a href="#">PC2 score:{this.state.pc2Score}</a></li>
+                                    <li><a href="#">PC3 score:{this.state.pc3Score}</a></li>
+                                    <li><a href="#">User score:{this.state.userScore}</a></li>
+                                </ul>
+                            </nav>
                         </div>
                 </div>
         </div>

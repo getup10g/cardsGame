@@ -1,6 +1,10 @@
 @import 'centerDiv';
 @import 'header';
 /* tiny reset */
+
+*{
+  box-sizing: border-box;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -11,7 +15,7 @@ html, body {
   body{
     background: #4d244e;
     font-family: sans-serif;
-    border-top: 5px solid #aa8e8d;
+    //border-top: 5px solid #aa8e8d;
     color: #fff;
   }
   /* title */
@@ -97,7 +101,7 @@ body{
 
 
 .grid-container .row {
-  margin-top: 10px;
+  padding-top: 10px;
   display:flex;
   flex-direction: column;
 

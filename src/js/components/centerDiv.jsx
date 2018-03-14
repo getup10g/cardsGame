@@ -123,16 +123,16 @@ class CenterDiv extends React.Component {
             buttonNextCard: false,
             buttonDone: false,
             buttonWait: false
-        });
+        },()=>{this.oponentsTurn();});
         let finishedInterval=setInterval(()=>{
-            this.oponentsTurn();
             console.log("interval jedzie");
-            if(this.state.winnerDiv!==false){
-                clearInterval(finishedInterval);
-            }
+            this.oponentsTurn();
+            if (this.state.UserDecideFinished) {
+                this.printWinner();}
+            clearInterval(finishedInterval);
             },3000);
-        };
 
+        };
     sendScores = () => {
         this.props.scores([this.state.pc1Score, this.state.pc2Score, this.state.pc3Score, this.state.userScore]);
     };
@@ -186,6 +186,8 @@ class CenterDiv extends React.Component {
                 this.shuffleTheCards(1, (array) => {
                     this.setState({
                         pc1Cards: [...this.state.pc1Cards, ...array]
+                    }, () => {
+                        this.calculateScoreForAll();
                     });
                 });
             }
@@ -194,6 +196,8 @@ class CenterDiv extends React.Component {
                 this.shuffleTheCards(1, (array) => {
                     this.setState({
                         pc2Cards: [...this.state.pc2Cards, ...array]
+                    }, () => {
+                        this.calculateScoreForAll();
                     });
                 });
             }
@@ -207,11 +211,9 @@ class CenterDiv extends React.Component {
                     });
                 });
             }
-            if (counter === 0 || this.state.UserDecideFinished) {
-                this.printWinner();
-            }
             clearInterval(timer);
-        }, 3000);
+        }, 1000);
+
     }
     printWinner() {
         let timer = setInterval(()=>{
@@ -224,10 +226,10 @@ class CenterDiv extends React.Component {
             pc3[0] === 0 ? winner = "PC3 WON" : pc3[0] < 0 ? pc3[0] = 100 : null;
             let user = [21 - this.state.userScore, "User WON"];
             user[0] === 0 ? winner = "User WON" : user[0] < 0 ? user[0] = 100 : null;
-            console.log("pc1", pc1);
-            console.log("pc2", pc2);
-            console.log("pc3", pc3);
-            console.log("user", user);
+            //console.log("pc1", pc1);
+            //console.log("pc2", pc2);
+            //console.log("pc3", pc3);
+            //console.log("user", user);
             if (winner.length < 2) {
                 let array = [];
                 pc1[0] < pc2[0] ? array.push(pc1) : array.push(pc2);
@@ -260,8 +262,8 @@ class CenterDiv extends React.Component {
                 buttonWait: true
             });
             clearInterval(waitForCards);
+        }, 5000);
 
-        }, 5000)
     }
 
     render() {
@@ -279,13 +281,13 @@ class CenterDiv extends React.Component {
                     <div className="row ">
                             <div className="pc-cards">
                                 <div className="pc1">
-                                    {pc1CardsLinksList}
+                                    <span>PC1:</span> {pc1CardsLinksList}
                                     </div>
                             </div>
                         </div>
                     <div className="row">
                             <div className="pc-cards pc3">
-                                <div className="pc3">{pc3CardsLinksList}</div>
+                                <div className="pc3"><span>PC3:</span>{pc3CardsLinksList}</div>
                             </div>
                             <div className="center-area">
                                 <div className="button-area">
@@ -297,14 +299,14 @@ class CenterDiv extends React.Component {
                             </div>
                             <div className="pc-cards pc2">
                                 <div className="pc2">
-                                    {pc2CardsLinksList}
+                                    <span>PC2:</span>{pc2CardsLinksList}
                                 </div>
                             </div>
                     </div>
                     <div className="row ">
                             <div className="user-cards">
                                 <div className="user">
-                                    {userCardsLinksList}
+                                    <span>User:</span> {userCardsLinksList}
                                 </div>
                             </div>
                     </div>
